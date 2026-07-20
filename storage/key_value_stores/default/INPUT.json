@@ -1,0 +1,7 @@
+{
+  "url": "https://www.amazon.com/dp/B0EXAMPLE",
+  "region": "USA",
+  "proxyUrls": [],
+  "timeoutSecs": 90,
+  "maxRetries": 2
+}

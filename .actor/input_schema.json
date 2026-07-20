@@ -1,0 +1,52 @@
+{
+  "title": "Amazon US Scraper input",
+  "description": "Scrape Amazon.com product price, stock, and title.",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "url": {
+      "title": "Product URL",
+      "type": "string",
+      "description": "Product/listing URL on amazon.com (or product ID for HEB/AliExpress).",
+      "editor": "textfield"
+    },
+    "region": {
+      "title": "Region",
+      "type": "string",
+      "description": "Marketplace region code used by Seller Pilot Hub.",
+      "editor": "textfield",
+      "default": "USA"
+    },
+    "proxyUrls": {
+      "title": "Proxy URLs",
+      "type": "array",
+      "description": "Optional HTTP(S) proxies, e.g. http://user:pass@host:port",
+      "editor": "stringList"
+    },
+    "timeoutSecs": {
+      "title": "Timeout (seconds)",
+      "type": "integer",
+      "default": 45,
+      "minimum": 10,
+      "maximum": 180,
+      "description": "HTTP request timeout in seconds."
+    },
+    "maxRetries": {
+      "title": "Max retries",
+      "type": "integer",
+      "default": 2,
+      "minimum": 0,
+      "maximum": 5,
+      "description": "Number of extra attempts after the first request fails."
+    },
+    "productId": {
+      "title": "Product ID (optional)",
+      "type": "string",
+      "description": "Optional for AliExpress/HEB when URL is missing.",
+      "editor": "textfield"
+    }
+  },
+  "required": [
+    "url"
+  ]
+}

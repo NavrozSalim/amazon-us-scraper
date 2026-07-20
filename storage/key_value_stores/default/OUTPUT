@@ -1,0 +1,13 @@
+{
+  "success": true,
+  "price": null,
+  "stock": null,
+  "title": "JavaScript is disabled",
+  "error_code": "",
+  "error_message": "",
+  "vendor": "amazonus",
+  "region": "USA",
+  "url": "https://www.amazon.com/",
+  "host": "amazon.com",
+  "attempt": 1
+}

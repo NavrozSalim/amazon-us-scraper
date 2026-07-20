@@ -1,0 +1,22 @@
+{
+  "actorSpecification": 1,
+  "name": "amazon-us-scraper",
+  "title": "Seller Pilot \u2014 Amazon US Scraper",
+  "description": "Production Amazon.com scraper for Seller Pilot Hub (price, stock, title).",
+  "version": "0.1.0",
+  "meta": {
+    "vendor": "amazonus",
+    "region": "USA",
+    "host": "amazon.com",
+    "sellerPilotHub": true
+  },
+  "input": "./input_schema.json",
+  "storages": {
+    "dataset": {
+      "actorSpecification": 1,
+      "title": "Scrape results",
+      "description": "Seller Pilot Hub compatible ScrapeResult rows."
+    }
+  },
+  "dockerfile": "./Dockerfile"
+}
