@@ -1,0 +1,13 @@
+{
+  "actorOutputSchemaVersion": 1,
+  "title": "DataHarvest scraper output",
+  "description": "Links to scraped product results (price, stock, title).",
+  "properties": {
+    "results": {
+      "type": "string",
+      "title": "Results",
+      "description": "Dataset items with success, price, stock, title, and errors.",
+      "template": "{{links.apiDefaultDatasetUrl}}/items"
+    }
+  }
+}

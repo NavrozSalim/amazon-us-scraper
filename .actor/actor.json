@@ -14,5 +14,6 @@
   "dockerfile": "./Dockerfile",
   "storages": {
     "dataset": "./dataset_schema.json"
-  }
+  },
+  "output": "./output_schema.json"
 }
