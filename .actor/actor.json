@@ -1,15 +1,18 @@
 {
   "actorSpecification": 1,
   "name": "amazon-us-scraper",
-  "title": "Seller Pilot — Amazon US Scraper",
-  "description": "Production Amazon.com scraper for Seller Pilot Hub (price, stock, title).",
+  "title": "DataHarvest — Amazon US Scraper",
+  "description": "Scrapes Amazon.com product pages for price, stock, and title. Built for DataHarvest.",
   "version": "0.1.0",
   "meta": {
     "vendor": "amazonus",
     "region": "USA",
     "host": "amazon.com",
-    "sellerPilotHub": true
+    "dataHarvest": true
   },
   "input": "./input_schema.json",
-  "dockerfile": "./Dockerfile"
+  "dockerfile": "./Dockerfile",
+  "storages": {
+    "dataset": "./dataset_schema.json"
+  }
 }

@@ -1,24 +1,29 @@
-# Seller Pilot — Amazon US Scraper
+# DataHarvest — Amazon US Scraper
 
-Production Amazon.com scraper for Seller Pilot Hub (price, stock, title).
+Scrapes Amazon.com product pages for price, stock, and title. Built for DataHarvest.
 
-Production scraper ported from Seller Pilot Hub (`saas-store-sync`).
+## Features
+
+- Price, stock, and title extraction
+- Structured dataset output for the Apify Console
+- Optional Apify Proxy / custom proxies (where supported)
+
+## Input
+
+Provide a product `url` (and/or `urls` for bulk, where supported).
 
 ## Output
 
-```json
-{
-  "success": true,
-  "price": 29.99,
-  "stock": 10,
-  "title": "Product title",
-  "error_code": "",
-  "error_message": "",
-  "vendor": "amazonus",
-  "region": "USA",
-  "url": "https://..."
-}
-```
+Each dataset item includes:
+
+| Field | Description |
+|-------|-------------|
+| `success` | Scrape succeeded |
+| `price` | Product price |
+| `stock` | Stock estimate |
+| `title` | Product title |
+| `error_code` / `error_message` | Present when failed |
+| `vendor` / `region` / `url` | Context |
 
 ## Local run
 
@@ -29,14 +34,10 @@ pip install -r requirements.txt
 apify run -p
 ```
 
-Set a real product URL in `storage/key_value_stores/default/INPUT.json`.
+## Deploy
 
-## AliExpress secrets (AliExpress actors only)
+```bash
+apify push
+```
 
-- `ALIEXPRESS_APP_KEY`
-- `ALIEXPRESS_APP_SECRET`
-- `ALIEXPRESS_ACCESS_TOKEN` (for Drop Shipping API)
-
-## Deploy / import
-
-Push this repo to GitHub, then in Apify Console: **Import from Git repository**.
+Or import this GitHub repo in the Apify Console, then complete **Publication** (display info, monetization, output schema is shipped in-repo).

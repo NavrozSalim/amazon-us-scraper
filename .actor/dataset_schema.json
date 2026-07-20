@@ -1,0 +1,138 @@
+{
+  "actorSpecification": 1,
+  "fields": {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+      "success": {
+        "type": "boolean",
+        "title": "Success",
+        "description": "Whether price/stock/title were scraped successfully.",
+        "example": true
+      },
+      "price": {
+        "type": [
+          "number",
+          "null"
+        ],
+        "title": "Price",
+        "description": "Product price in local currency, or null if not found.",
+        "example": 29.99
+      },
+      "stock": {
+        "type": [
+          "integer",
+          "null"
+        ],
+        "title": "Stock",
+        "description": "Estimated stock quantity, or null if unknown.",
+        "example": 10
+      },
+      "title": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "title": "Title",
+        "description": "Product title from the page.",
+        "example": "Example Product"
+      },
+      "error_code": {
+        "type": "string",
+        "title": "Error code",
+        "description": "Machine-readable error code when success is false.",
+        "example": ""
+      },
+      "error_message": {
+        "type": "string",
+        "title": "Error message",
+        "description": "Human-readable error details when success is false.",
+        "example": ""
+      },
+      "vendor": {
+        "type": "string",
+        "title": "Vendor",
+        "description": "Canonical vendor code used by DataHarvest.",
+        "example": "costcoau"
+      },
+      "region": {
+        "type": "string",
+        "title": "Region",
+        "description": "Marketplace region (USA, AU, UK).",
+        "example": "AU"
+      },
+      "url": {
+        "type": "string",
+        "title": "URL",
+        "description": "Product URL that was scraped.",
+        "example": "https://www.example.com/product"
+      }
+    },
+    "required": [
+      "success",
+      "url",
+      "vendor",
+      "region"
+    ]
+  },
+  "views": {
+    "overview": {
+      "title": "Overview",
+      "description": "Price, stock, and title for each scraped product.",
+      "transformation": {
+        "fields": [
+          "success",
+          "title",
+          "price",
+          "stock",
+          "vendor",
+          "region",
+          "url",
+          "error_code",
+          "error_message"
+        ]
+      },
+      "display": {
+        "component": "table",
+        "properties": {
+          "success": {
+            "label": "OK",
+            "format": "boolean"
+          },
+          "title": {
+            "label": "Title",
+            "format": "text"
+          },
+          "price": {
+            "label": "Price",
+            "format": "number"
+          },
+          "stock": {
+            "label": "Stock",
+            "format": "number"
+          },
+          "vendor": {
+            "label": "Vendor",
+            "format": "text"
+          },
+          "region": {
+            "label": "Region",
+            "format": "text"
+          },
+          "url": {
+            "label": "URL",
+            "format": "link"
+          },
+          "error_code": {
+            "label": "Error",
+            "format": "text"
+          },
+          "error_message": {
+            "label": "Error detail",
+            "format": "text"
+          }
+        }
+      }
+    }
+  }
+}

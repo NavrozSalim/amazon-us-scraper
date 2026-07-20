@@ -13,7 +13,7 @@
     "region": {
       "title": "Region",
       "type": "string",
-      "description": "Marketplace region code used by Seller Pilot Hub.",
+      "description": "Marketplace region code used by DataHarvest.",
       "editor": "textfield",
       "default": "USA"
     },

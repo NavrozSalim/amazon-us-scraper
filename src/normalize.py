@@ -1,4 +1,4 @@
-"""Normalize legacy scraper dicts to Seller Pilot / Apify output shape."""
+"""Normalize legacy scraper dicts to DataHarvest / Apify output shape."""
 from __future__ import annotations
 
 
